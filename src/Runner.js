@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Spine from "./RunnerSpine";
+import MySpine from "./RunnerSpine";
 
 class Runner extends Component {
   state = {
@@ -24,7 +24,7 @@ class Runner extends Component {
       animation = "die";
     }
     return (
-      <Spine
+      <MySpine
         {...this.props}
         spineData={this.state.skeleton}
         animation={animation}

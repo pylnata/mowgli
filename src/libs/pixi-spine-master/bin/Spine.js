@@ -602,6 +602,7 @@ Spine.globalAutoUpdate = true;
 Spine.globalDelayLimit = 0;
 Spine.clippingPolygon = [];
 exports.Spine = Spine;
+
 function SlotContainerUpdateTransformV3() {
     let pt = this.parent.worldTransform;
     let wt = this.worldTransform;
