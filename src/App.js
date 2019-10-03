@@ -16,6 +16,10 @@ const OPTIONS = {
 };
 */
 
+const width = window.innerWidth < 800 ? window.innerWidth : 800;
+const height = window.innerHeight < 600 ? window.innerHeight : 600;
+
+
 export default () => {
   const [status, setStatus] = React.useState("play");
   const [isBananaVisible, setBananaVisible] = React.useState(true);
@@ -53,8 +57,8 @@ export default () => {
       )}
 
       <Stage
-        width={800}
-        height={600}
+        width={width}
+        height={height}
         options={{ backgroundColor: 0x1099bb }}
         interactive
       >
