@@ -1,0 +1,40 @@
+{
+  "name": "pixi",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/runtime": "^7.6.2",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
+    "path": "^0.12.7",
+    "pixi.js": "^5.1.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "react-pixi-fiber": "^0.9.3",
+    "react-scripts": "3.1.2",
+    "redux": "^4.0.4"
+  },
+  "scripts": {
+    "start-dev": "react-scripts start",
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
