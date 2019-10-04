@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import { CustomPIXIComponent } from "react-pixi-fiber";
-import { Spine as pSpine } from "./libs/pixi-spine-master/bin/Spine";
+import { Spine as pSpine } from "../../libs/pixi-spine-master/bin/Spine";
 
 const RunnerSpine = CustomPIXIComponent(
   {
@@ -55,7 +55,7 @@ const RunnerSpine = CustomPIXIComponent(
 
         function detectCollision() {
           let cactusX = Math.round(app.stage.children[4].x);
-          return (cactusX <= 379 && cactusX >= 324 && player.position.y > 450);
+          return (cactusX <= 379 && cactusX >= 200 && player.position.y > 450);
         }
         app.ticker.add(() => {
           if(detectCollisionWithBanana()) {

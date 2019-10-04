@@ -1,52 +1,107 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #000;
-  padding-top: 60px;
-  color: #fff;
-  font-size: 40px;
+@font-face {
+	font-family:'frozen';
+	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Ice%20kingdom%20-%20Bold%20-%20Por%20Kustren.woff');
 }
 
-.stop {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
+body {
+  margin: 0;
+  font-family: "frozen", serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+}
+
+.stop,
+.intro {
   background: rgba(0, 0, 0, 0.8);
-  text-align: center;
-  padding-top: 15%;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
   align-items: center;
+  position: absolute;
+  max-width: 800px;
+  max-height: 600px;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 400;
 }
 
 button {
+  font-family: "frozen", serif;
   font-size: 30px;
   border: none;
   border-radius: 30px;
   padding: 10px 20px;
-  background-color: orangered;
+  background-color: orange;
   color: #fff;
   margin-top: 30px;
 }
 button:hover {
   cursor: pointer;
-  background: orange;
+  background: orangered;
 }
 
 center {
-  position: relative;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background:#000;
 }
 
 .credit {
-  font-size: 12px;
+  margin: 20% 0 20px 0;
+  font-size: 16px;
 }
 
-.credit a, .credit a:visited, .credit a:link {
+.credit a,
+.credit a:visited,
+.credit a:link {
   color: #fff;
 }
+
+.intro {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("/intro.png");
+  background-size: cover;
+}
+
+.rules {
+  margin-top: 40px;
+  font-size: 22px;
+  font-weight: bold;
+  color: orange;
+}
+
+h1 {
+  background: linear-gradient(to bottom, rgba(orangered, .9), rgba(orange, 1));
+  background-image: linear-gradient(
+      to bottom,
+      rgb(255, 165, 0),
+      rgb(245, 58, 11)
+    );
+  background-clip: text;
+  background-size: contain;
+  width: 100%;
+  text-align: center;
+  color: transparent;
+  font-weight: 900;
+  font-size: 70px;
+}
+
+h1 span {
+color: yellow;
+}
+
