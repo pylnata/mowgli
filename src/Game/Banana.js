@@ -1,5 +1,6 @@
 import React from "react";
 import AnimatedSprite from "./components/AnimatedSprite";
+import { bananaY, bananaWidth } from "./options";
 
 class Banana extends React.Component {
   render() {
@@ -9,10 +10,13 @@ class Banana extends React.Component {
         app={app}
         length={800}
         res="banana2.png"
-        y={90}
+        y={bananaY}
         shift={0}
         speed={10}
+       // x={400}
         visible={visible}
+        width={bananaWidth}
+        height={bananaWidth}
       />
     );
   }

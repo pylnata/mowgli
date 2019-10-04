@@ -39,7 +39,7 @@ button {
   padding: 10px 20px;
   background-color: orange;
   color: #fff;
-  margin-top: 30px;
+  margin-top: 3vh;
 }
 button:hover {
   cursor: pointer;
@@ -98,7 +98,9 @@ h1 {
   text-align: center;
   color: transparent;
   font-weight: 900;
-  font-size: 70px;
+  
+  padding: 0;
+  margin: 0;
 }
 
 h1 span {

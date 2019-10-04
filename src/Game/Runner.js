@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MySpine from "./components/RunnerSpine";
+import * as options from "./options";
 
 class Runner extends Component {
   state = {
@@ -28,7 +29,7 @@ class Runner extends Component {
         {...this.props}
         spineData={this.state.skeleton}
         animation={animation}
-        options={{ x: 300, y: 500, scale: 0.3 }}
+        options={{ x: options.playerX, y: options.playerY, scale: options.playerScale }}
       />
     );
   }

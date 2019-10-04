@@ -1,6 +1,7 @@
 import * as PIXI from "pixi.js";
 import { CustomPIXIComponent } from "react-pixi-fiber";
 import { Spine as pSpine } from "../../libs/pixi-spine-master/bin/Spine";
+import {bananaWidth, snailWidth} from "../options";
 
 const RunnerSpine = CustomPIXIComponent(
   {
@@ -18,11 +19,12 @@ const RunnerSpine = CustomPIXIComponent(
       }
     ) => {
       if (spineData) {
+
         let player = null;
         if (spineData !== oldProps.spineData) {
           instance.removeChildren(0, instance.children.length);
           player = new pSpine(spineData);
-          player.state.setAnimationByName(0, animation, true);
+          player.state.setAnimation(0, animation, true);
           instance.addChild(player);
         } else {
           player = instance.getChildAt(0);
@@ -36,32 +38,35 @@ const RunnerSpine = CustomPIXIComponent(
         function onTouchStart() {
           player.state.setAnimation(0, "jump", false);
           player.state.addAnimation(0, "running", true, 0);
-          player.position.y = 400;
+          player.position.y = y - 100;
           setTimeout(() => {
-            player.position.y = 500;
+            player.position.y = y;
           }, 500); // TODO look at docs how to do this correctly
         }
 
         if (animation !== oldProps.animation) {
-          player.state.setAnimationByName(0, animation, true);
+          player.state.setAnimation(0, animation, true);
         }
 
         function detectCollisionWithBanana() {
-          if(player.position.y !== 400) return false;
-          if(app.stage.children[5].visible !== true) return false;
+          if (player.position.y !== y - 100) return false;
+          if (app.stage.children[5].visible !== true) return false;
           let bananaX = Math.round(app.stage.children[5].x);
-          return (bananaX >= 270 && bananaX <= 454);
+          return bananaX >= (x - bananaWidth / 3) && bananaX <= (x + bananaWidth * 2);
         }
 
         function detectCollision() {
-          let cactusX = Math.round(app.stage.children[4].x);
-          return (cactusX <= 379 && cactusX >= 200 && player.position.y > 450);
+          let snailX = Math.round(app.stage.children[4].x);
+          return (
+            snailX <= (x + snailWidth / 3 * 2) &&
+            snailX >= (x - snailWidth*100 / 120) &&
+            player.position.y > (y - 50)
+          );
         }
         app.ticker.add(() => {
-          if(detectCollisionWithBanana()) {
-              catchBanana();
-          }
-          else if (detectCollision()) {
+          if (detectCollisionWithBanana()) {
+            catchBanana();
+          } else if (detectCollision()) {
             app.stage.removeAllListeners();
             player.state.clearTracks();
             player.state.addAnimation(0, "running", false, 0);
