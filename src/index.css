@@ -42,3 +42,11 @@ button:hover {
 center {
   position: relative;
 }
+
+.credit {
+  font-size: 12px;
+}
+
+.credit a, .credit a:visited, .credit a:link {
+  color: #fff;
+}

@@ -72,8 +72,8 @@ export default () => {
 
             return (
               <>
-                <AnimatedSprite app={app} shift={0} res="bg.jpg" y={0} />
-                <AnimatedSprite app={app} shift={1286} res="bg.jpg" y={0} />
+                <AnimatedSprite app={app}  shift={0} res="bg2.jpg" y={0} />
+                <AnimatedSprite app={app}  shift={1286} res="bg2.jpg" y={0} />
                 <AnimatedSprite
                   app={app}
                   shift={0}
@@ -93,7 +93,7 @@ export default () => {
                   shift={643}
                   //length={643}
                   speed={25}
-                  res="snail.png"
+                  res="snail2.png"
                   y={app.screen.height - 200}
                 />
 
@@ -118,6 +118,8 @@ export default () => {
           }}
         </AppContext.Consumer>
       </Stage>
+      <div className="credit">
+      </div>
     </center>
   );
 };
