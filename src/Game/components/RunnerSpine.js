@@ -1,7 +1,6 @@
 import * as PIXI from "pixi.js";
 import { CustomPIXIComponent } from "react-pixi-fiber";
 import { Spine as pSpine } from "../../libs/pixi-spine-master/bin/Spine";
-import {bananaWidth, snailWidth} from "../options";
 
 const RunnerSpine = CustomPIXIComponent(
   {
@@ -11,10 +10,11 @@ const RunnerSpine = CustomPIXIComponent(
       oldProps,
       {
         stopGame,
-        catchBanana,
+        setCurrentPlayerY,
         app,
         spineData,
         animation,
+        status,
         options: { x = 0, y = 0, scale = 1 } = {}
       }
     ) => {
@@ -39,8 +39,10 @@ const RunnerSpine = CustomPIXIComponent(
           player.state.setAnimation(0, "jump", false);
           player.state.addAnimation(0, "running", true, 0);
           player.position.y = y - 100;
+          setCurrentPlayerY(player.position.y);
           setTimeout(() => {
             player.position.y = y;
+            setCurrentPlayerY(player.position.y);
           }, 500); // TODO look at docs how to do this correctly
         }
 
@@ -48,32 +50,13 @@ const RunnerSpine = CustomPIXIComponent(
           player.state.setAnimation(0, animation, true);
         }
 
-        function detectCollisionWithBanana() {
-          if (player.position.y !== y - 100) return false;
-          if (app.stage.children[5].visible !== true) return false;
-          let bananaX = Math.round(app.stage.children[5].x);
-          return bananaX >= (x - bananaWidth / 3) && bananaX <= (x + bananaWidth * 2);
+        if (status=== "before_stop") {
+          app.stage.removeAllListeners();
+          player.state.clearTracks();
+          player.state.addAnimation(0, "running", false, 0);
+          player.state.setAnimation(0, "die", true, 0);
+          setTimeout(() => stopGame(), 800);
         }
-
-        function detectCollision() {
-          let snailX = Math.round(app.stage.children[4].x);
-          return (
-            snailX <= (x + snailWidth / 3 * 2) &&
-            snailX >= (x - snailWidth*100 / 120) &&
-            player.position.y > (y - 50)
-          );
-        }
-        app.ticker.add(() => {
-          if (detectCollisionWithBanana()) {
-            catchBanana();
-          } else if (detectCollision()) {
-            app.stage.removeAllListeners();
-            player.state.clearTracks();
-            player.state.addAnimation(0, "running", false, 0);
-            player.state.setAnimation(0, "die", true, 0);
-            setTimeout(() => stopGame(), 800);
-          }
-        });
 
         player.position.set(x, y);
         player.scale.set(scale);

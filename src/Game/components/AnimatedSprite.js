@@ -20,6 +20,11 @@ class AnimatedSprite extends PureComponent {
     }
     x -= this.length;
     this.setState({ x: x });
+
+    if(this.props.onChangeX) {
+      this.props.onChangeX(x);
+    }
+    
   };
   componentDidMount() {
     this.props.app.ticker.add(this.animate);

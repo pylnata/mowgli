@@ -7,7 +7,7 @@ class Snail extends React.Component {
     return false;
   }
   render() {
-    const { app } = this.props;
+    const { app, onChangeX } = this.props;
     return (
      <AnimatedSprite
           app={app}
@@ -18,6 +18,7 @@ class Snail extends React.Component {
           y={snailY}
           width={snailWidth}
           height={snailWidth}
+          onChangeX={onChangeX}
           />
     );
   }

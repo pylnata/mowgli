@@ -3,8 +3,14 @@ import AnimatedSprite from "./components/AnimatedSprite";
 import { bananaY, bananaWidth } from "./options";
 
 class Banana extends React.Component {
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.visible !== this.props.visible;
+  }
+
+
   render() {
-    const { app, visible } = this.props;
+    const { app, visible, onChangeX } = this.props;
     return (
            <AnimatedSprite
         app={app}
@@ -17,6 +23,7 @@ class Banana extends React.Component {
         visible={visible}
         width={bananaWidth}
         height={bananaWidth}
+        onChangeX={onChangeX}
       />
     );
   }

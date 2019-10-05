@@ -7,7 +7,15 @@ import Banana from "./Banana";
 
 import * as options from "./options";
 
-export default ({ status, isBananaVisible, catchBanana, stopGame }) => {
+export default ({
+  status,
+  isBananaVisible,
+  catchBanana,
+  stopGame,
+  setSnailX,
+  setCurrentPlayerY,
+  setBananaX
+}) => {
   return (
     <Stage
       width={options.width}
@@ -38,13 +46,17 @@ export default ({ status, isBananaVisible, catchBanana, stopGame }) => {
                 y={options.groundY}
                 speed={15}
               />
-              <Snail app={app} />
-              <Banana app={app} visible={isBananaVisible} />
+              <Snail app={app} onChangeX={setSnailX} />
+              <Banana
+                app={app}
+                visible={isBananaVisible}
+                onChangeX={setBananaX}
+              />
               <Runner
                 app={app}
                 stopGame={stopGame}
-                catchBanana={catchBanana}
                 status={status}
+                setCurrentPlayerY={setCurrentPlayerY}
               />
             </>
           );

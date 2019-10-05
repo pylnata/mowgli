@@ -2,6 +2,11 @@ import React from "react";
 import AnimatedSprite from "./components/AnimatedSprite";
 
 class Background extends React.Component {
+
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     const { texture, length, speed, app, y } = this.props;
     return (

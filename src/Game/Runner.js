@@ -30,6 +30,8 @@ class Runner extends Component {
         spineData={this.state.skeleton}
         animation={animation}
         options={{ x: options.playerX, y: options.playerY, scale: options.playerScale }}
+        setCurrentPlayerY={this.props.setCurrentPlayerY}
+        status={this.props.status}
       />
     );
   }

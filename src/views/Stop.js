@@ -2,13 +2,13 @@ import React from "react";
 
 import Credit from "./Credit";
 
-export default ({ startGame }) => (
+export default ({ startGame, result }) => (
   <div className="stop">
     <div>
-    <h1> Mowgli <span>VS</span> evil snail</h1>
+    <h1> Mowgli <span>VS</span> evil snails</h1>
 
       <div>
-      Your score: <b>{localStorage.getItem("banana")}</b>{" "}
+      Your score: <b>{result}</b>{" "}
       <img src="/banana2.png" width="40" height="40" alt="banana" />
       </div>
 
