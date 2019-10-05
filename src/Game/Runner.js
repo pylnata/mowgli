@@ -7,8 +7,10 @@ class Runner extends Component {
     skeleton: undefined
   };
   componentDidMount() {
+    this.props.app.stop();
     this.props.app.loader.add("pixie", "pixie.json").load((_, res) => {
       this.setState({ skeleton: res.pixie.spineData });
+      this.props.app.start();
     });
   }
 
