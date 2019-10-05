@@ -5,7 +5,7 @@ export const height = window.innerHeight < 600 ? window.innerHeight : 600;
 // height - x
 
 let fix = 0;
-if (height >=320 && height <= 375) fix = -20;
+if (height >=320 && height <= 375) fix = -30;
 export const groundHeight = height * 210 / 600 * 0.8 + fix;
 
 export const groundY = height - groundHeight ;
@@ -28,6 +28,8 @@ export const snailWidth = Math.round((width * 120) / 800);
 
 export const snailY = playerY - snailWidth + 10;
 
-export const bananaY = playerY - 100 - 2.4 * bananaWidth;
+if (height >=320 && height <= 375) fix = 20;
+
+export const bananaY = playerY - 150 - 2.4 * bananaWidth + fix;
 
 
