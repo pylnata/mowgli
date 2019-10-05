@@ -14,7 +14,7 @@ class Snail extends React.Component {
           shift={643}
           speed={25}
          // x={500}
-          res="snail.png"
+          res="snail2.png"
           y={snailY}
           width={snailWidth}
           height={snailWidth}
