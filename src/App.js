@@ -50,8 +50,8 @@ export default () => {
     if (currentPlayerY !== playerY - 100) return;
     if (!isBananaVisible) return;
     if (
-      bananaX >= playerX - bananaWidth / 3 &&
-      bananaX <= playerX + bananaWidth * 2
+      bananaX >= playerX - bananaWidth - 20  &&
+      bananaX <= playerX + bananaWidth
     ) {
       catchBanana();
     }
