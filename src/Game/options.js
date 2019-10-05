@@ -5,7 +5,7 @@ export const height = window.innerHeight < 600 ? window.innerHeight : 600;
 // height - x
 
 let fix = 0;
-if (height >=360 && height <= 375) fix = -20;
+if (height >=320 && height <= 375) fix = -20;
 export const groundHeight = height * 210 / 600 * 0.8 + fix;
 
 export const groundY = height - groundHeight ;
@@ -16,7 +16,7 @@ export const playerY = groundY + 20;
 //800 = .3
 //height - x
 
-if (height >=360 && height <= 375) fix = -0.05;
+if (height >=320 && height <= 375) fix = -0.05;
 
 export const playerScale = (Math.round(width * 3/10)/800) + fix;
 // 800 - 120
