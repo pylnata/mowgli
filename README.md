@@ -1,4 +1,4 @@
-![Alt text](screen.png?raw=true "Mowgli vs Evil Snails")
+![Alt text](screen.gif?raw=true "Mowgli vs Evil Snails")
 
 # "Mowgli vs Evil Snails" game
 
