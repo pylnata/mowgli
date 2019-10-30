@@ -9,7 +9,7 @@ export default ({ startGame, result }) => (
 
       <div>
       Your score: <b>{result}</b>{" "}
-      <img src="/banana2.png" width="40" height="40" alt="banana" />
+      <img src="https://raw.githubusercontent.com/pylnata/mowgli/master/public/banana2.png" width="40" height="40" alt="banana" />
       </div>
 
     </div>

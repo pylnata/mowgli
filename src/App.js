@@ -79,7 +79,7 @@ export default () => {
           {status === "stop" && <Stop startGame={startGame} result={result} />}
           {status === "play" && (
             <div className="result">
-              <img src="https://raw.githubusercontent.com/pylnata/mowgli/public/banana2.png" alt="" width={bananaWidth / 2} />
+              <img src="https://raw.githubusercontent.com/pylnata/mowgli/master/public/banana2.png" alt="" width={bananaWidth / 2} />
               {result}
             </div>
           )}
