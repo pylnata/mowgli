@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/mowgli/static/css/main.bab743a8.chunk.css",
-    "main.js": "/mowgli/static/js/main.e92b9b01.chunk.js",
+    "main.css": "/mowgli/static/css/main.6ed4dd6b.chunk.css",
+    "main.js": "/mowgli/static/js/main.6cc78ecd.chunk.js",
     "runtime-main.js": "/mowgli/static/js/runtime-main.54d8cccc.js",
     "static/js/2.334677e5.chunk.js": "/mowgli/static/js/2.334677e5.chunk.js",
     "index.html": "/mowgli/index.html",
-    "precache-manifest.856ff4050eaedd2c39dce24cfbb95fd6.js": "/mowgli/precache-manifest.856ff4050eaedd2c39dce24cfbb95fd6.js",
+    "precache-manifest.41cf18588cf1faf51043d6a719df0f29.js": "/mowgli/precache-manifest.41cf18588cf1faf51043d6a719df0f29.js",
     "service-worker.js": "/mowgli/service-worker.js"
   }
 }
