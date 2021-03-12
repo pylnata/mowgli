@@ -52,7 +52,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
     "react-app-polyfill": "^1.0.3",
-    "react-dev-utils": "^9.0.4",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.10.1",
     "react-pixi-fiber": "^0.9.3",
     "redux": "^4.0.4",
